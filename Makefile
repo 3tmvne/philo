@@ -1,6 +1,6 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g
-SRC = main.c parse.c utils.c init.c
+CFLAGS = -Wall -Werror -Wextra -pthread
+SRC = main.c parse.c utils.c init.c routine.c
 OBJ_DIR = ./obj
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 NAME = philo

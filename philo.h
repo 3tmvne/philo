@@ -37,5 +37,7 @@ typedef struct s_philo
 void    handle_input(int ac, char **av, t_info *info);
 int     ft_atoi(char *str, int *err);
 void    init_philo(t_info *info, t_philo *philos);
+void    philosophers(t_info *info);
+long    get_time_ms(void);
 
 #endif
