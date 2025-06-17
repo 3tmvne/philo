@@ -6,7 +6,7 @@ static int     check_input(t_info *info, int ac)
         || info->time_to_die < 1
         || info->time_to_eat < 1
         || info->time_to_sleep < 1
-        || (ac == 5 && info->num_must_eat < 1))
+        || (ac == 6 && info->num_must_eat < 1))
         return 0;
     return 1;
 }

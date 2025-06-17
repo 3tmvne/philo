@@ -26,10 +26,17 @@ void    init_philo(t_info *info, t_philo *philos)
     {
         philos[i].philo_id = i + 1;
         philos[i].nb_eaten = 0;
-        philos[i].last_meal = get_time_ms();
-        philos[i].left_fork = &info->forks[i];
-        philos[i].right_fork = &info->forks[(i + 1) % info->num_philo];
+        philos[i].last_meal = 0;
+        philos[i].right_fork = &info->forks[i];
+        philos[i].left_fork = &info->forks[(i + 1) % info->num_philo];
         philos[i].data = info;
+        i++;
+    }
+    info->start_time = get_time_ms();
+    i = 0;
+    while(i < info->num_philo)
+    {
+        philos[i].last_meal = info->start_time;
         i++;
     }
 }

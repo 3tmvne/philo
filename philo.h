@@ -18,9 +18,9 @@ typedef struct s_info
     int             num_must_eat;
     long            start_time;
     int             someone_died;
-    pthread_mutex_t print_mutex;
+    t_philo         *philos;
     pthread_mutex_t *forks;
-    t_philo  *philos;
+    pthread_mutex_t print_mutex;
 }t_info;
 
 typedef struct s_philo

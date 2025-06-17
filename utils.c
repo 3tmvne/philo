@@ -9,7 +9,7 @@ int ft_atoi(char *str, int *err)
     result = 0;
     while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
         i++;
-    if (str[i] < '0' && str[i] > '9')
+    if (str[i] < '0' || str[i] > '9')
     {
         *err = 1;
         return 0;
