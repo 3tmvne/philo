@@ -18,9 +18,12 @@ typedef struct s_info
     int             num_must_eat;
     long            start_time;
     int             someone_died;
+    int             all_eaten;
     t_philo         *philos;
     pthread_mutex_t *forks;
     pthread_mutex_t print_mutex;
+    pthread_mutex_t death_mutex;
+    pthread_mutex_t meal_mutex;
 }t_info;
 
 typedef struct s_philo
@@ -39,5 +42,8 @@ int     ft_atoi(char *str, int *err);
 void    init_philo(t_info *info, t_philo *philos);
 void    philosophers(t_info *info);
 long    get_time_ms(void);
+int     check_death(t_info *info);
+void    print_status(t_philo *philo, char *status);
+void    cleanup(t_info *info);
 
 #endif
